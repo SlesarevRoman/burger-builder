@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
-import Aux from '../../hoc/Aux';
-import styles from './Layout.css';
+import React from 'react';
+import Wrapper from '../../hoc/Wrapper';
+import styles from './Layout.module.css';
 
 
 const layout = (props) => (
-  <Aux>
+  <Wrapper>
     <div>Toolbar, Sidebar, Backdrop</div>
-    <main className={styles.content}>
+    <main className={styles.сontent}>
       {props.children}
     </main>
-  </Aux>
+  </Wrapper>
   
 );
 

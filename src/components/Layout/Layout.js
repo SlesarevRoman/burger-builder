@@ -1,11 +1,12 @@
 import React from 'react';
 import Wrapper from '../../hoc/Wrapper';
 import styles from './Layout.module.css';
+import Toolbar from '../Navigation/Toolbar/Toolbar';
 
 
 const layout = (props) => (
   <Wrapper>
-    <div>Toolbar, Sidebar, Backdrop</div>
+    <Toolbar />
     <main className={styles.сontent}>
       {props.children}
     </main>

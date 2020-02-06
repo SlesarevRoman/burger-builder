@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import Wrapper from '../../hoc/Wrapper';
+import Wrapper from '../Wrapper/Wrapper';
 import styles from './Layout.module.css';
-import Toolbar from '../Navigation/Toolbar/Toolbar';
-import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
+import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
+import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
 
 
 class Layout extends Component {
   state = {
-    showSideDrawer: true
+    showSideDrawer: false
   }
 
   sideDrawerClosedHandler = () => {
@@ -16,10 +16,20 @@ class Layout extends Component {
     });
   }
 
+  sideDrawerToggleHandler = () => {
+    this.setState( (prevState) => {
+      return {
+        showSideDrawer: !prevState.showSideDrawer
+      }
+    });
+  }
+
   render () {
     return (
       <Wrapper>
-        <Toolbar />
+        <Toolbar 
+          drawerToggleClicked={this.sideDrawerToggleHandler}
+        />
         <SideDrawer 
           closed={this.sideDrawerClosedHandler}
           open={this.state.showSideDrawer}

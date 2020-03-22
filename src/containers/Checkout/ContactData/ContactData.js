@@ -115,6 +115,7 @@ class ContactData extends Component {
   }
 
   inputChangedHandler = (event, inputIdentifier) => {
+    event.preventDefault();
 
     const updatedFormElement = updateObject(this.state.orderForm[inputIdentifier], {
       value: event.target.value,
